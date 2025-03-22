@@ -1,89 +1,92 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccnj3dom1d2g8"]
+[gd_scene load_steps=14 format=3 uid="uid://bvb0j2yofwcot"]
 
-[ext_resource type="Texture2D" uid="uid://bkqf1t5suricb" path="res://assets/sprites/Idle_red.png" id="1_0bcch"]
-[ext_resource type="Texture2D" uid="uid://cd5dnpemh5sy2" path="res://assets/sprites/Walk_red.png" id="2_4ioir"]
+[ext_resource type="Texture2D" uid="uid://bavg274530rmh" path="res://assets/sprites/Idle_blue.png" id="1_0bcch"]
+[ext_resource type="Script" uid="uid://cto1rrclyf8l0" path="res://scenes/player_atom.gd" id="1_4ioir"]
+[ext_resource type="Texture2D" uid="uid://c5kkx40c87ve" path="res://assets/sprites/Walk_blue.png" id="2_4ioir"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vlb1b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_es7sb"]
 atlas = ExtResource("1_0bcch")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6kufn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cesd"]
 atlas = ExtResource("1_0bcch")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ea8fd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2du5g"]
 atlas = ExtResource("1_0bcch")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w6amw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag2ed"]
 atlas = ExtResource("1_0bcch")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0i8i4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr6bk"]
 atlas = ExtResource("2_4ioir")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7oda0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkqbj"]
 atlas = ExtResource("2_4ioir")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_84iaf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_otj5w"]
 atlas = ExtResource("2_4ioir")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mr1al"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_atfaa"]
 atlas = ExtResource("2_4ioir")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fieht"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xngg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vlb1b")
+"texture": SubResource("AtlasTexture_es7sb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6kufn")
+"texture": SubResource("AtlasTexture_0cesd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ea8fd")
+"texture": SubResource("AtlasTexture_2du5g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w6amw")
+"texture": SubResource("AtlasTexture_ag2ed")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0i8i4")
+"texture": SubResource("AtlasTexture_gr6bk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7oda0")
+"texture": SubResource("AtlasTexture_xkqbj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_84iaf")
+"texture": SubResource("AtlasTexture_otj5w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mr1al")
+"texture": SubResource("AtlasTexture_atfaa")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 10.0
+"speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v11kw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbg60"]
 radius = 4.0
 
 [node name="PlayerAtom" type="CharacterBody2D"]
+script = ExtResource("1_4ioir")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
-sprite_frames = SubResource("SpriteFrames_fieht")
-animation = &"walk"
-frame = 3
-frame_progress = 1.0
+sprite_frames = SubResource("SpriteFrames_0xngg")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_v11kw")
+shape = SubResource("CircleShape2D_nbg60")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
