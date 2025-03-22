@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://dtbhscfmhl4t6"]
+
+[ext_resource type="Script" uid="uid://5w4e5suh3005" path="res://scenes/player_mike.gd" id="1_41cxe"]
+[ext_resource type="Texture2D" uid="uid://bkqf1t5suricb" path="res://assets/sprites/Idle_red.png" id="1_ppu3m"]
+[ext_resource type="Texture2D" uid="uid://cd5dnpemh5sy2" path="res://assets/sprites/Walk_red.png" id="2_41cxe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlb1b"]
+atlas = ExtResource("1_ppu3m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kufn"]
+atlas = ExtResource("1_ppu3m")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea8fd"]
+atlas = ExtResource("1_ppu3m")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6amw"]
+atlas = ExtResource("1_ppu3m")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i8i4"]
+atlas = ExtResource("2_41cxe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oda0"]
+atlas = ExtResource("2_41cxe")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84iaf"]
+atlas = ExtResource("2_41cxe")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr1al"]
+atlas = ExtResource("2_41cxe")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fieht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlb1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kufn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea8fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6amw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i8i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oda0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84iaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr1al")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v11kw"]
+radius = 4.0
+
+[node name="PlayerMike" type="CharacterBody2D"]
+script = ExtResource("1_41cxe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_fieht")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.645674
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_v11kw")
