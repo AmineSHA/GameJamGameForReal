@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bvb0j2yofwcot"]
 
 [ext_resource type="Texture2D" uid="uid://bavg274530rmh" path="res://assets/sprites/Idle_blue.png" id="1_0bcch"]
-[ext_resource type="Script" uid="uid://cto1rrclyf8l0" path="res://scenes/player_atom.gd" id="1_4ioir"]
+[ext_resource type="Script" uid="uid://cto1rrclyf8l0" path="res://scripts/player_atom.gd" id="1_4ioir"]
 [ext_resource type="Texture2D" uid="uid://c5kkx40c87ve" path="res://assets/sprites/Walk_blue.png" id="2_4ioir"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_es7sb"]

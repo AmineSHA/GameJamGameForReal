@@ -148,7 +148,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ssvqc")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 10.0
 }]
@@ -250,6 +250,7 @@ tile_set = SubResource("TileSet_p57ef")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door"]
 position = Vector2(112, 23)
 sprite_frames = SubResource("SpriteFrames_264po")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(112, 23)
@@ -259,10 +260,10 @@ shape = SubResource("RectangleShape2D_0tnpc")
 position = Vector2(-75, 39)
 sprite_frames = SubResource("SpriteFrames_bt5mj")
 autoplay = "default"
-frame_progress = 0.337336
+frame_progress = 0.473851
 
 [node name="pit2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-107, 39)
 sprite_frames = SubResource("SpriteFrames_sww3w")
 autoplay = "default"
-frame_progress = 0.243527
+frame_progress = 0.380052

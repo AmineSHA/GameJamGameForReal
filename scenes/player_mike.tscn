@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtbhscfmhl4t6"]
+[gd_scene load_steps=15 format=3 uid="uid://dtbhscfmhl4t6"]
 
-[ext_resource type="Script" uid="uid://5w4e5suh3005" path="res://scenes/player_mike.gd" id="1_41cxe"]
+[ext_resource type="Script" uid="uid://5w4e5suh3005" path="res://scripts/player_mike.gd" id="1_41cxe"]
 [ext_resource type="Texture2D" uid="uid://bkqf1t5suricb" path="res://assets/sprites/Idle_red.png" id="1_ppu3m"]
 [ext_resource type="Texture2D" uid="uid://cd5dnpemh5sy2" path="res://assets/sprites/Walk_red.png" id="2_41cxe"]
+[ext_resource type="Script" uid="uid://bkq3vej4fbdsb" path="res://scripts/laser.gd" id="4_vlb1b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlb1b"]
 atlas = ExtResource("1_ppu3m")
@@ -53,7 +54,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -82,10 +83,21 @@ script = ExtResource("1_41cxe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_fieht")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.645674
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_v11kw")
+
+[node name="Gun" type="Node2D" parent="."]
+position = Vector2(7, -6)
+script = ExtResource("4_vlb1b")
+
+[node name="RayCast2D" type="RayCast2D" parent="Gun"]
+rotation = -1.5708
+
+[node name="BeamLine" type="Line2D" parent="Gun"]
+points = PackedVector2Array(0, 0, 52, 0)
+width = 3.0
+default_color = Color(0.921569, 0.337255, 0.294118, 1)
