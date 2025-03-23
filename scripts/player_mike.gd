@@ -13,7 +13,7 @@ const JUMP_VELOCITY = -300.0
 var grabbed_object = null
 
 func _process(delta):
-	if Input.is_action_pressed("fireq"):
+	if Input.is_action_pressed("fire_k") and !gun.is_active():
 		gun.activate()
 	else:
 		gun.deactivate()
@@ -26,12 +26,12 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump_k") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left_k", "move_right_k")
 	if direction > 0: 
 		animated_sprite.flip_h = false
 	elif direction < 0 : 
@@ -42,7 +42,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("walk")
 	else: 
-		animated_sprite.play("jump   ")
+		#animated_sprite.play("jump")
+		pass
 	if direction:
 		velocity.x = direction * SPEED
 	else:

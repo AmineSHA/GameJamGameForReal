@@ -1,4 +1,6 @@
-res://scenes/game.tscn
 res://scenes/player_atom.tscn
-res://scenes/player_mike.tscn
-res://scenes/player_mike.gd
+res://scripts/grenade_launcher.gd
+res://scenes/game.tscn
+res://scenes/grenade.tscn
+res://scripts/player_mike.gd
+res://scripts/player_atom.gd

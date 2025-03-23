@@ -75,7 +75,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v11kw"]
-radius = 4.0
+radius = 6.0
 
 [node name="PlayerMike" type="CharacterBody2D"]
 script = ExtResource("1_41cxe")
@@ -87,7 +87,7 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(2, -7)
 shape = SubResource("CircleShape2D_v11kw")
 
 [node name="Gun" type="Node2D" parent="."]
@@ -98,6 +98,6 @@ script = ExtResource("4_vlb1b")
 rotation = -1.5708
 
 [node name="BeamLine" type="Line2D" parent="Gun"]
-points = PackedVector2Array(0, 0, 52, 0)
+points = PackedVector2Array(0, 0, 6.30893, 0, 13.3234, 0, 20.6976, 0, 27.892, 0, 35.0863, 0, 42.8203, 0, 47.4966, 0, 52, 0)
 width = 3.0
 default_color = Color(0.921569, 0.337255, 0.294118, 1)

@@ -156,10 +156,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
 size = Vector2(6, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_264po"]
-atlas = ExtResource("10_vtaks")
-region = Rect2(16, 16, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kice"]
 atlas = ExtResource("10_vtaks")
 region = Rect2(0, 0, 16, 16)
@@ -172,12 +168,13 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("10_vtaks")
 region = Rect2(0, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_264po"]
+atlas = ExtResource("10_vtaks")
+region = Rect2(16, 16, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bt5mj"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_264po")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1kice")
 }, {
@@ -186,6 +183,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_37s47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_264po")
 }],
 "loop": true,
 "name": &"default",
@@ -238,7 +238,8 @@ zoom = Vector2(4, 4)
 position = Vector2(-22, -13)
 
 [node name="PlayerAtom" parent="." instance=ExtResource("2_lnu2h")]
-position = Vector2(56, -16)
+position = Vector2(56, -17)
+disable_mode = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-3, -1)

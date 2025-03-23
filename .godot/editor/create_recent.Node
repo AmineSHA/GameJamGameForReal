@@ -1,11 +1,11 @@
+Node2D
+CharacterBody2D
+CollisionShape2D
+Sprite2D
+RigidBody2D
 Line2D
 RayCast2D
-Node2D
 AnimatedSprite2D
-CollisionShape2D
-RigidBody2D
 TileMapLayer
-CharacterBody2D
 StaticBody2D
 Camera2D
-Sprite2D
